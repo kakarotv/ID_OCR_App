@@ -15,7 +15,7 @@ This application is an OCR (Optical Character Recognition) web app that extracts
 - Node.js
 - Express.js
 - Multer (for handling file uploads)
-- Tesseract.js (for OCR processing)
+- Tesseract.js (for OCR processing) (can download latest installer from: https://github.com/UB-Mannheim/tesseract/wiki)
 - HTML/CSS for front-end layout
 - MongoDB (for data storage)
 
@@ -30,3 +30,15 @@ This application integrates with MongoDB, a document-based NoSQL database, to st
 - dateOfIssue
 - dateOfExpiry
 
+## Steps to Run the ID OCR App
+
+### Prerequisites:
+- Node.js installed on your machine 
+- Tesseract.js for OCR processing ([Tesseract.js Installer](https://github.com/UB-Mannheim/tesseract/wiki))
+  
+1. **Clone the repository**
+2. **Install Dependencies like express, multer, node-tesseract-ocr(Ensure Tesseract is installed and the executable path is correctly set on your system), mongoose**
+3. **Run the app:** run index.js file or write "node .\index.js" in terminal
+4. **Access the App:** Open a web browser and go to "http://localhost:5000".
+5. **Upload an Image**
+   
