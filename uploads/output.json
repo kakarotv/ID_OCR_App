@@ -2,5 +2,7 @@
   "idNumber": "1 1037 02071 81 1",
   "name": "Miss Nattarika\r\n\r\n",
   "lastName": "Yangsuai",
-  "dateOfBirth": "25 Jun. 1996"
+  "dateOfBirth": "25 Jun. 1996",
+  "dateOfIssue": null,
+  "dateOfExpiry": null
 }

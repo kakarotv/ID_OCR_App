@@ -54,12 +54,17 @@ function extractInformationFromOCR(text) {
   const nameRegex = /Name ([\w\s]+)(?=\s*Lastname)/i;
   const lastNameRegex = /Lastname\s+([A-Za-z]+)/i;
   const dobRegex = /Date of Birth (\d{1,2} [A-Za-z]+\. \d{4})/i;
+  const issueDateRegex = /Date of Issue (\d{1,2} [A-Za-z]+\. \d{4})/i;
+  const expiryDateRegex = /Date of Expiry (\d{1,2} [A-Za-z]+\. \d{4})/i;
+  
 
   // Match regex patterns in the OCR text
   const idNumberMatch = text.match(idNumberRegex);
   const nameMatch = text.match(nameRegex);
   const lastNameMatch = text.match(lastNameRegex);
   const dobMatch = text.match(dobRegex);
+  const issueDateMatch = text.match(issueDateRegex);
+  const expiryDateMatch = text.match(expiryDateRegex);
 
   // Construct extracted information object
   const extractedInfo = {
@@ -67,6 +72,8 @@ function extractInformationFromOCR(text) {
     name: nameMatch ? nameMatch[1] : null,
     lastName: lastNameMatch ? lastNameMatch[1] : null,
     dateOfBirth: dobMatch ? dobMatch[1] : null,
+    dateOfIssue: issueDateMatch ? issueDateMatch[1] : null,
+    dateOfExpiry: expiryDateMatch ? expiryDateMatch[1] : null,
   };
 
   return extractedInfo;
