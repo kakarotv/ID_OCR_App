@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID OCR App</title>
+    <style>
+        /* Your existing CSS styles */
+    </style>
+</head>
+<body>
+    <h1>ID OCR App</h1>
+    <form action="/extracttextfromimage" method="post" enctype="multipart/form-data">
+        <label for="file">Upload Image File</label>
+        <input type="file" name="file" accept="image/*" required>
+        <button>Extract Text From Image</button>
+    </form>
+
+    <% if (extractedInfo) { %>
+        <h2>Extracted Information</h2>
+        <ul>
+            <li>ID Number: <%= extractedInfo.idNumber %></li>
+            <li>Name: <%= extractedInfo.name %></li>
+            <li>Last Name: <%= extractedInfo.lastName %></li>
+            <li>Date of Birth: <%= extractedInfo.dateOfBirth %></li>
+            <!-- <li>Date of Issue: <%= extractedInfo.dateOfIssue %></li>
+            <li>Date of Expiry: <%= extractedInfo.dateOfExpiry %></li> -->
+        </ul>
+    <% } else { %>
+        <p>No information extracted</p>
+    <% } %>
+
+    <% if (outputJSON) { %>
+        <h2>Output JSON</h2>
+        <textarea cols="40" rows="10" readonly>
+            <%= outputJSON %>
+        </textarea>
+    <% } %>
+</body>
+</html>
